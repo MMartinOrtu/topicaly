@@ -1,0 +1,19 @@
+*, *::after, *::before, *:after, *:before{
+  box-sizing: border-box;
+} 
+
+body{  
+  font-family: $text-font-family;
+  background: $baby-powder;
+}
+
+a{
+  font-size: $font-size-medium;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  color: grey;
+    a:hover {
+      color: brown;
+    }
+}
+

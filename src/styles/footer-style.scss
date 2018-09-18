@@ -1,0 +1,13 @@
+.web-footer {
+  display: flex;
+  width:100vw;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  font-size: $font-size-base;
+  background: $gainsboro;
+  p {
+    padding: 0 10px;
+  }
+}

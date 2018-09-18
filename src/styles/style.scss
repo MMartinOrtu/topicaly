@@ -1,1 +1,9 @@
-@import "~normalize.css/normalize"; 
+@import "~normalize.css/normalize";
+@import url(https://use.fontawesome.com/releases/v5.0.7/css/all.css);
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Upright:700|Junge');
+@import "settings.scss";
+@import "layout.scss";
+@import "base.scss";
+@import "header-style.scss";
+@import "footer-style.scss";
+

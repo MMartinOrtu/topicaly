@@ -1,5 +1,5 @@
 {
-  "name": "topical",
+  "name": "topicaly",
   "version": "1.0.0",
   "description": "A web site for publiching articles",
   "main": "index.js",
@@ -44,6 +44,7 @@
     "@babel/core": "^7.0.0",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "@fortawesome/fontawesome-free": "^5.3.1",
     "animejs": "^2.2.0",
     "babel-loader": "^8.0.2",
     "dotenv-webpack": "^1.5.7",
