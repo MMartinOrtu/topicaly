@@ -1,0 +1,57 @@
+@import "mixins/text-overflow-ellipsis";
+
+.articles-list{
+    margin: 0 auto;
+    max-width:$breakpoint-tablet-landscape;
+
+    .article {
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+        background: white;
+        margin: 10px;
+        box-shadow: 0 1px 5px $grey;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: .25s;
+        @include for-mobile-landscape{
+            display: inline-block;
+            width: 100px;
+        }
+        &:hover {
+            cursor: pointer;
+            box-shadow: 5px 5px 5px $grey;
+        }
+        &:active {
+            box-shadow: 5px 5px 5px $grey;
+        }
+
+        .cover {
+            background: grey;
+            & img{
+                max-width: 100%;
+            }
+        }
+
+        .info {
+            flex: 2;
+            flex-direction: column;
+            margin: 15px;
+            overflow: hidden;
+            .artist {
+                margin-top: 10px;
+                font-size: $font-size-small;
+                @include text-overflow-ellipsis;
+            }
+            .title {
+                font-weight: bold;
+                @include text-overflow-ellipsis;
+            }
+        }
+
+
+
+    }
+
+
+}

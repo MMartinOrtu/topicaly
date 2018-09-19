@@ -2,6 +2,9 @@
 .web-header{
   position:fixed;
   width: 100vw;
+  height: $header-height;
+  z-index: 99999;
+  top: 0;
   padding:$gutter-padding;
   background:$gainsboro;
 
@@ -75,7 +78,7 @@
         to { opacity: 1; }
     }
     .header-components {
-      animation: fadeIn 2s;
+      animation: fadeIn 1s;
       display: flex;
       flex-direction: column;
       ul{

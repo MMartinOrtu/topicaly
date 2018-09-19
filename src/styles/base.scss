@@ -1,10 +1,11 @@
 *, *::after, *::before, *:after, *:before{
   box-sizing: border-box;
-} 
+}
 
-body{  
+body{
   font-family: $text-font-family;
   background: $baby-powder;
+  padding-top: $header-height;
 }
 
 a{
