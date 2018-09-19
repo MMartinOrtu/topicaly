@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production",
-    "start": "webpack-dev-server --mode=development --hot",
+    "start": "webpack-dev-server --mode=development --hot --inline",
     "server": "json-server --watch db.json --port=8000"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MMartinOrtu/topical.git"
+    "url": "git+https://github.com/MMartinOrtu/topicaly.git"
   },
   "author": "Miguel Martin",
   "license": "ISC",

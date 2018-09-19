@@ -1,0 +1,6 @@
+@mixin hover-color {
+    transition: 2s;
+    a:hover{
+      color:$dark-green;
+    }
+}

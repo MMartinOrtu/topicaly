@@ -103,10 +103,10 @@ var devConfig = {
   devServer: {
     open:true,
     overlay: true,
-    port: 3000,
-    hot: true,
-    contentBase: [path.join(__dirname, 'src', 'pages', 'articles'), path.join(__dirname, 'src', 'pages', 'article-detail'), path.join(__dirname, 'src', 'pages', 'partials')],
-    watchContentBase: true
+    port: 3000
+    /* hot: true */
+/*     contentBase: [path.join(__dirname, 'src', 'pages', 'articles'), path.join(__dirname, 'src', 'pages', 'article-detail'), path.join(__dirname, 'src', 'pages', 'partials')],
+    watchContentBase: true */
   },
 };
 

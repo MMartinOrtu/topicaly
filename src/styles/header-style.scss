@@ -1,3 +1,4 @@
+@import 'mixins/hover-color.scss';
 .web-header{
   position:fixed;
   width: 100vw;
@@ -8,7 +9,9 @@
     font-size: $font-size-h1;
     font-family: $title-font-family;
     width: 100%;
-    text-align: center;
+    min-width: 260px;
+    padding-left: $gutter-padding;
+    text-align: left;
     margin: 0 auto;
     color: $dark-green;
   }
@@ -21,9 +24,14 @@
     font-size: $font-size-large;
     padding:0 $gutter-padding;
   }
-
   .header-components {
     display: none;
+  }
+
+  @include for-mobile-landscape{
+    .web-title {
+      text-align: center;
+    }
   }
 
   @include for-tablet-portrait{
@@ -57,40 +65,45 @@
     .categories-list li{
       display:inline-block;
       padding: .5rem 1rem;
-      transition: 2s;
-        a:hover{
-          color:$dark-green;
-        }
+      @include hover-color;
     }
   }
-}
 
-.show-form{
-  .header-components {
-    display: flex;
-    flex-direction: column;
+  &.show-menu{
+    @keyframes fadeIn {
+      from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .header-components {
+      animation: fadeIn 2s;
+      display: flex;
+      flex-direction: column;
+      ul{
+        margin: 0;
+        padding:0;
 
-    ul{
-      margin: 0;
-      padding:0;
-
-      li{
-        list-style-type: none;
-        padding: 8px;
-        text-align: center;
+        li{
+          list-style-type: none;
+          padding: 8px;
+          text-align: center;
+          @include hover-color;
+        }
       }
     }
+
+    #sign-in-link{
+      text-align: center;
+      margin-top:5px;
+      color:$dark-green;
+    }
+    #search-input{
+      margin: 10px auto;
+    }
   }
 
-  #sign-in-link{
-    text-align: center;
-    margin-top:5px;
-    color:$dark-green;
-  }
-  #search-input{
-    margin: 10px auto;
-  }
 }
+
+
 
 
 
