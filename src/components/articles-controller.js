@@ -13,18 +13,26 @@ export class ArticlesController {
         console.log(this.element);
         this.articlesService.getArticles().then( articles =>{
             let html = '';
+            
             for (let article of articles) {
+                let cover= `<img class="article-cover" src="${article.cover.url}" alt="Article image">`;
+                if (article.cover.type === "video"){
+                    cover = `<iframe class="article-cover" src="${article.cover.url}" frameborder="0" allowfullscreen></iframe>`;
+                }
             html += `<div class="articles">
                         <div class="cover">
-                            <img src="${article.cover}">
+                            ${cover}
                         </div>
                         <div class="info">
                             <h2 class="title">${article.title}</h2>
-                            <div class="text">text</div>
-                            <div class="author">${article.author}</div>
-                            <img  class="profile-picture" src="${placeholder}" srcset="${article.picture}" width="100px">
-                            <time class="published-date">${article.added}</time>
-                            <a href="">Comentarios</a>
+                              <div class="autor-wrapper">
+                                <img  class="profile-picture hide-elements" src="${placeholder}" srcset="${article.picture}" width="100px">
+                                <div class="author">${article.author}</div>
+                            </div> 
+                             <div class="text hide-elements">${article.text}</div>
+ 
+                            <p class="published-date">${article.added}</p>
+                            <a href="" class="hide-elements">Comentarios</a>
                         </div>
                 </div>`;
         }

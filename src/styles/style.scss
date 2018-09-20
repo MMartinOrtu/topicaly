@@ -2,7 +2,7 @@
 @import url(https://use.fontawesome.com/releases/v5.0.7/css/all.css);
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Upright:700|Junge');
 @import "settings.scss";
-@import "layout.scss";
+@import "mixins/layout.scss";
 @import "base.scss";
 @import "styles/header-style.scss";
 @import "footer-style.scss";

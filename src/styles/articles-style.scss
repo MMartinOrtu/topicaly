@@ -1,53 +1,129 @@
-@import "mixins/text-overflow-ellipsis";
+@import "mixins/text-overflow";
 
 .articles-list {
-    
+
+    .articles {
+        display: grid;
+        border-bottom: 1px solid $grey;
+        grid-template-columns: 70px auto;
+        padding: 0 $gutter-padding;
+
+        .cover{
+            border: 1px solid $grey;
+            align-self: center;
+            justify-self: center;
+            width: 70px;
+            height: 70px;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+
+            & .article-cover{
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                /* min-height: 100px; */
+                min-width: 150px;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .info{
+            padding: $gutter-padding 15px;
+            overflow: hidden;
+
+            .title{
+                margin:0;
+                margin-bottom: 5px;
+                line-height: 1;
+                font-size: $font-size-h2;
+            }
+    /*         .text {
+                @include text-overflow;
+            } */
+
+        .published-date{
+                font-size: $font-size-small;
+                color: $grey;
+                line-height: 0.8;
+                margin:0;
+
+            }
+            & .hide-elements {
+                display:none;
+            }
+        }
+    }
+
+    @include for-tablet-portrait{
+        width: 90%;
+        margin: 0 auto;
+
+        .articles{
+            grid-template-columns: 150px auto;
+            padding: $gutter-padding;
+            .cover{
+                width: 150px;
+                height: 150px;
+                & .article-cover{
+                    min-width: 250px;
+                }
+            }
+        .info{
+            .hide-elements{
+                display: block;
+            }
+            .autor-wrapper{
+                display: flex;
+                height: 40px;
+                align-items: center;
+
+                .profile-picture{
+                max-width: 40px;
+                border-radius: 50%;
+                }
+                .author{
+                    font-size: $font-size-base;
+                    padding: $gutter-padding;
+
+                }
+            }
+
+        .text {
+            margin-right: 30px;
+            margin-bottom: 30px;
+            @include text-overflow;
+
+            }
+            .published-date{
+                display: inline;
+            }
+            & a{
+                font-size: $font-size-base;
+                color: black;
+                display: inline !important;
+                float: right;
+            }
+        }
+        }
+    }
     @include for-tablet-landscape{
         margin-top: 80px;
+        width: 80%;
+        .articles{
+            grid-template-columns: 400px auto;
+            padding: $gutter-padding;
+            .cover{
+                width: 400px;
+                height: 400px;
+                & .article-cover{
+                    min-width: 800px;
+                }
+           }
+
     }
 
-  .articles {
-    display: grid;
-    border-bottom: 1px solid $grey;
-    grid-template-columns: 70px auto;
-
-
-    .cover{
-        border: 1px solid $grey;
-        align-self: center;
-        justify-self: center;
-        width: 70px;
-        height: 70px;
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-        margin: 0;
-
-
-        & img{
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-height: 100%;
-            min-width: 100%;
-            transform: translate(-50%, -50%);
-        }
-
-      }
-
-    .info{
-        padding: 10px;
-        h2{
-            margin: 0;
-            line-height: 1;
-        }
-        text {
-            @include text-overflow-ellipsis;
-        }
-        & img, a {
-            display:none;
-        }
     }
-  }
+
 }

@@ -5,7 +5,7 @@
   z-index: 99999;
   top: 0;
   padding:$gutter-padding;
-  background:$gainsboro;
+  background:white;
 
   .web-title{
     font-size: $font-size-h1;
@@ -30,11 +30,11 @@
     display: none;
   }
 
-/*   @include for-mobile-landscape{
+  @include for-mobile-landscape{
     .web-title {
       text-align: center;
     }
-  } */
+  }
 
   @include for-tablet-landscape{
     .fa-bars{
