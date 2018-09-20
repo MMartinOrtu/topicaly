@@ -2,7 +2,6 @@
 .web-header{
   position:fixed;
   width: 100vw;
-  height: $header-height;
   z-index: 99999;
   top: 0;
   padding:$gutter-padding;
@@ -31,15 +30,18 @@
     display: none;
   }
 
-  @include for-mobile-landscape{
+/*   @include for-mobile-landscape{
     .web-title {
       text-align: center;
     }
-  }
+  } */
 
-  @include for-tablet-portrait{
+  @include for-tablet-landscape{
     .fa-bars{
       display: none;
+    }
+    .web-title {
+      text-align: center;
     }
     .header-components{
       display:flex;
@@ -73,14 +75,17 @@
   }
 
   &.show-menu{
+
     @keyframes fadeIn {
       from { opacity: 0; }
         to { opacity: 1; }
     }
+
     .header-components {
       animation: fadeIn 1s;
       display: flex;
       flex-direction: column;
+
       ul{
         margin: 0;
         padding:0;
