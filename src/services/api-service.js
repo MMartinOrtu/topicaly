@@ -30,7 +30,7 @@ export class APIService {
         }
         return true;
       } catch (error) {
-        console.warn('Error', error); // eslint-disable-line no-console
+        console.warn('Error', error); 
         return { error };
       }
     }

@@ -82,8 +82,9 @@
                 align-items: center;
 
                 .profile-picture{
-                max-width: 30px;
-                border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
                 }
                 .author{
                     font-size: $font-size-base;
@@ -129,8 +130,9 @@
                 }
                .author-wrapper{
                     margin:10px 0;
-                    .profile-picture{  
-                        max-width: 40px;
+                    .profile-picture{
+                        width: 40px;
+                        height: 40px;
                     }
                     .author{
                         font-size: $font-size-medium;

@@ -8,6 +8,18 @@ export class ArticlesController {
         this.articlesService = articlesService;
     }
 
+    showLoadingMessage() {
+        this.element.innerHTML = '<div class="loading">Cargando...</div>';
+    }
+
+    showErrorMessage() {
+        this.element.innerHTML = '<div class="error">Se ha producido un error</div>';
+    }
+
+    showNoSongsMessage() {
+        this.element.innerHTML = '<div class="info">No hay ninguna canción</div>';
+    }
+
 
     loadArticles () {
         console.log(this.element);
@@ -67,8 +79,6 @@ export class ArticlesController {
 
 }
 
-
-/* export default { ArticlesController }; */
 
 
 
