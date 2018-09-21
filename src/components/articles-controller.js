@@ -13,7 +13,6 @@ export class ArticlesController {
         console.log(this.element);
         this.articlesService.getArticles().then( articles =>{
             let html = '';
-            
             for (let article of articles) {
                 let cover= `<img class="article-cover" src="${article.cover.url}" alt="Article image">`;
                 if (article.cover.type === "video"){
@@ -28,13 +27,14 @@ export class ArticlesController {
                               <div class="autor-wrapper">
                                 <img  class="profile-picture hide-elements" src="${placeholder}" srcset="${article.picture}" width="100px">
                                 <div class="author">${article.author}</div>
-                            </div> 
-                             <div class="text hide-elements">${article.text}</div>
- 
+                            </div>
+                            <div class="text-wrapper">
+                                <div class="text hide-elements">${article.text}</div>
+                            </div>
                             <p class="published-date">${article.added}</p>
                             <a href="" class="hide-elements">Comentarios</a>
                         </div>
-                </div>`;
+                    </div>`;
         }
         this.element.innerHTML = html;
     });
