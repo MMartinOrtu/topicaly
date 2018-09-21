@@ -11,10 +11,9 @@ body{
 a{
   font-size: $font-size-medium;
   text-decoration: none;
-  transition: all 0.2s linear;
-  color: grey;
+  color: black;
     a:hover {
-      color: brown;
+      color: rgb(47, 207, 47);
     }
 }
 

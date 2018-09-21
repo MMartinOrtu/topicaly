@@ -25,8 +25,8 @@ var page = function({ title, template, chunks, filename }) {
 
 var commonConfig = {
   entry: {
-    articles: ['@babel/polyfill', 'whatwg-fetch', path.join(__dirname, 'src', 'pages', 'articles', 'articles-entry')],
-    article: ['@babel/polyfill', 'whatwg-fetch', path.join(__dirname, 'src', 'pages', 'article-detail', 'article-detail-entry')]
+    articles: ['@babel/polyfill', 'whatwg-fetch', path.join(__dirname, 'src', 'pages', 'articles', 'articles.js')],
+    detail: ['@babel/polyfill', 'whatwg-fetch', path.join(__dirname, 'src', 'pages', 'detail', 'detail.js')]
   },
   output: {
     filename: '[name][hash].js',
@@ -41,10 +41,10 @@ var commonConfig = {
       filename: path.resolve(__dirname, 'dist', 'index.html')
     }),
     page({
-      title: 'Article-detail',
-      template: path.join(__dirname, 'src', 'pages', 'article-detail', 'article-detail.html'),
-      chunks: ['article'],
-      filename: path.resolve(__dirname, 'dist', 'detail', 'article-detail.html')
+      title: 'Detail',
+      template: path.join(__dirname, 'src', 'pages', 'detail', 'index.html'),
+      chunks: ['detail'],
+      filename: path.resolve(__dirname, 'dist', 'detail', 'index.html')
     })
   ],
   module: {
@@ -58,10 +58,7 @@ var commonConfig = {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           {
-            loader: 'file-loader',
-            options: {
-              name: 'assets/[path][name].[hash].[ext]'
-            }
+            loader: 'file-loader?name=[name].[ext]&useRelativePath=true',
           },
           {
             loader: 'image-webpack-loader'

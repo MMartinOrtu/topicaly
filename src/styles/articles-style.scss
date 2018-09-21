@@ -1,9 +1,9 @@
 @import "mixins/text-overflow";
 
 .articles-list {
-
     .articles {
         display: grid;
+        align-items: center; 
         border-bottom: 1px solid lighten($grey, 20%);
         grid-template-columns: 70px auto;
         padding: 0 $gutter-padding;
@@ -16,7 +16,6 @@
         }
 
         .cover{
-            /* border: 1px solid $grey; */
             align-self: center;
             justify-self: center;
             width: 70px;
@@ -40,8 +39,7 @@
         .info{
             padding: $gutter-padding 15px;
             overflow: hidden;
-
-            .title{
+            a>.title{
                 margin:0;
                 margin-bottom: 5px;
                 line-height: 1;
@@ -78,13 +76,13 @@
             .hide-elements{
                 display: block;
             }
-            .autor-wrapper{
+            .author-wrapper{
                 display: flex;
                 height: 40px;
                 align-items: center;
 
                 .profile-picture{
-                max-width: 40px;
+                max-width: 30px;
                 border-radius: 50%;
                 }
                 .author{
@@ -101,7 +99,7 @@
             .published-date{
                 display: inline;
             }
-            a{
+            .comments{
                 font-size: $font-size-base;
                 color: black;
                 /* display: inline !important; */
@@ -114,35 +112,34 @@
         margin-top: 80px;
         width: 80%;
         .articles{
-            grid-template-columns: 400px auto;
+            grid-template-columns: 300px auto;
             padding: $gutter-padding;
             .cover{
-                width: 400px;
-                height: 400px;
+                width: 300px;
+                height: 300px;
                 & .article-cover{
                     min-width: 600px;
                     min-height: 300px;
                 }
             }
-        
            .info{
             font-size: $font-size-medium;
-                .title{
+                a .title{
                     font-size: $font-size-large;
                 }
-               .autor-wrapper{
-                    margin:30px 0;
-                    .profile-picture{
-                        max-width: 60px;
+               .author-wrapper{
+                    margin:10px 0;
+                    .profile-picture{  
+                        max-width: 40px;
                     }
                     .author{
                         font-size: $font-size-medium;
                     }
                 }
-                .text-wrapper{
+               .text-wrapper{
                     height: 110px;
                     overflow: hidden;
-                    margin:30px 0 60px 0;
+                    margin:30px 0;
                     & .text{
                         white-space: normal;
                     }
@@ -151,16 +148,30 @@
     }
     }
     @include for-desktop{
-        & .info {
-            .title{
-                font-size: $font-size-extra-large;
+        width: 70%;
+        .articles{
+            grid-template-columns: 350px auto;
+            padding: $gutter-padding;
+            .cover{
+                width: 350px;
+                height: 350px;
+                & .article-cover{
+                    min-width: 600px;
+                    min-height: 300px;
+                }
             }
-            .published-date{
-                font-size: $font-size-medium;
+            .info {
+                a .title{
+                    font-size: $font-size-extra-large;
+                }
+                .published-date{
+                    font-size: $font-size-medium;
+                }
+                a{
+                    font-size: $font-size-medium;
+                }
             }
-            a{
-                font-size: $font-size-medium;
-            }
-         }
+        }
+
     }
 }
