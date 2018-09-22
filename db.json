@@ -15,7 +15,7 @@
     {
       "id": 2,
       "cover": {
-        "url": "https://images.unsplash.com/photo-1519408469771-2586093c3f14?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2aae7d6afbca5305d449f33a8627cf16&auto=format&fit=crop&w=500&q=60",
+        "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=47d2b1f32cc05c976af4a39256e01cba&auto=format&fit=crop&w=500&q=60",
         "type": "img"
       },
       "title": "Turned on MacBook on table beside iMac",
@@ -122,124 +122,6 @@
     }
   ],
   "comments": [
-    {
-      "id": 1,
-      "fullname": "primero",
-      "email": "pomikelor@gmail",
-      "comment": "COMENT1",
-      "articleId": 1
-    },
-    {
-      "fullname": "aa",
-      "email": "aa",
-      "comment": "aa",
-      "articleId": 2,
-      "id": 2
-    },
-    {
-      "fullname": "qd",
-      "email": "pomikelor@gmail",
-      "comment": "wdq",
-      "articleId": "1",
-      "id": 3
-    },
-    {
-      "fullname": "qaw",
-      "email": "pomikelor@hotmail.com",
-      "comment": "a",
-      "articleId": "1",
-      "id": 4
-    },
-    {
-      "fullname": "sdf",
-      "email": "pomikelor@gmail",
-      "comment": "sc",
-      "articleId": "1",
-      "id": 5
-    },
-    {
-      "fullname": "sdf",
-      "email": "pomikelor@gmail",
-      "comment": "sc",
-      "articleId": "1",
-      "id": 6
-    },
-    {
-      "fullname": "sdf",
-      "email": "pomikelor@gmail",
-      "comment": "sc",
-      "articleId": "1",
-      "id": 7
-    },
-    {
-      "fullname": "sdf",
-      "email": "pomikelor@gmail",
-      "comment": "sc",
-      "articleId": "1",
-      "id": 8
-    },
-    {
-      "fullname": "sdf",
-      "email": "pomikelor@gmail",
-      "comment": "sc",
-      "articleId": "1",
-      "id": 9
-    },
-    {
-      "fullname": "sdf",
-      "email": "pomikelor@gmail",
-      "comment": "sc",
-      "articleId": "1",
-      "id": 10
-    },
-    {
-      "fullname": "sdf",
-      "email": "pomikelor@gmail",
-      "comment": "sc",
-      "articleId": "1",
-      "id": 11
-    },
-    {
-      "fullname": "sdf",
-      "email": "pomikelor@gmail",
-      "comment": "sc",
-      "articleId": "1",
-      "id": 12
-    },
-    {
-      "fullname": "a",
-      "email": "as@aa",
-      "comment": "sd",
-      "articleId": "2",
-      "id": 13
-    },
-    {
-      "fullname": "terde",
-      "email": "pomikelor@hotmail.com",
-      "comment": "w",
-      "articleId": "2",
-      "id": 14
-    },
-    {
-      "fullname": "we",
-      "email": "segundamano@madrecoraje.org",
-      "comment": "we",
-      "articleId": "2",
-      "id": 15
-    },
-    {
-      "fullname": "we",
-      "email": "pomikelor@gmail.com",
-      "comment": "w",
-      "articleId": "2",
-      "id": 16
-    },
-    {
-      "fullname": "we",
-      "email": "as@aa",
-      "comment": "eeeeeeeee",
-      "articleId": "2",
-      "id": 17
-    }
+
   ]
 }

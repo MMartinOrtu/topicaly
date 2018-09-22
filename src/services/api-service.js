@@ -1,3 +1,4 @@
+import ux from 'components/ux-controller.js';
 export class APIService {
     constructor() {
        this.baseUrl = process.env.API_URL;
@@ -12,6 +13,7 @@ export class APIService {
         return response.json();
       } catch (error) {
         console.warn('Error', error);
+        ux.showErrorMessage(document.body);
         return { error };
       }
     }

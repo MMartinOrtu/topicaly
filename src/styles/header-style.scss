@@ -21,7 +21,7 @@
   .fa-bars{
     position: absolute;
     top: 17px;
-    right: 10px;
+    right: 5%;
     color: $onyx;
     font-size: $font-size-large;
     padding:0 $gutter-padding;
@@ -52,12 +52,12 @@
       right: 180px;
       color:$dark-green;
     }
-    input {
+    #search-input {
       position: absolute;
       color:$grey;
-      top: 20px;
+      top: 18px;
       font-size:$font-size-medium;
-      right: 20px;
+      right: 30px;
       width: 140px;
       cursor: pointer;
       border: 0px solid;
