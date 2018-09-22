@@ -1,0 +1,60 @@
+@import "mixins/text-overflow";
+
+.article-detail {
+    display: grid;
+    grid-gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    padding: $gutter-padding;
+    /* max-width: 500px; */
+
+    .title{
+        font-size: $font-size-large;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .article-cover {
+        border-radius: 5%;
+        overflow: hidden;
+    }
+
+    .author-wrapper{
+        display: grid;
+        justify-self:stretch;
+        align-items: center;
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-gap: 10px;
+        .profile-picture{
+            min-width: 60px;
+            width:60px;
+            height: 60px;
+            border-radius: 50%;
+         }
+        .author{
+            font-size: $font-size-base;
+        }
+        .published-date{
+            margin: 0;
+        }
+        .fa-heart{
+            justify-self: end;
+            color: rgb(75, 11, 11),
+        }
+    }
+    .text{
+        text-align: justify;
+        font-size: $font-size-medium;
+    }
+    @include for-tablet-portrait{
+        width: 80%;
+        margin: 50px auto;
+        grid-gap: 20px;
+    }
+    @include  for-desktop{
+        width: 60%;
+        .author-wrapper .author{
+            font-size: $font-size-medium;
+        }
+    }
+}

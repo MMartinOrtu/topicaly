@@ -1,0 +1,39 @@
+
+.modal{
+    display: none;
+}
+.comments-form{
+    display: grid;
+    justify-items: center;
+    grid-gap: 2px;
+    justify-content: stretch;
+    padding: $gutter-padding;
+
+    label{
+        display: none;
+    }
+    .input{
+        padding: 0.8rem;
+        letter-spacing: normal;
+        border: 0px solid;
+        border-bottom: .5px solid $grey;
+        width: 60%;
+        font-size: $font-size-medium;
+    }
+
+    .submit-button{
+        border: 0px solid;
+        background-color: $grey;
+        color: white;
+        font-size: $font-size-medium;
+        margin:10px;
+        max-width: 20%;
+    }
+    .error{
+        border: 1px solid red;
+    }
+}
+.hidden{
+    display: grid;
+}
+

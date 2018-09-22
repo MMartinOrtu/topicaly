@@ -3,18 +3,25 @@ import placeholder from 'assets/user-solid.svg';
 import ux from 'components/ux-controller.js';
 
 export class ArticlesController {
-    constructor (selector, articlesService){
+    constructor (selector, articlesService, pubSub){
         this.element= document.querySelector(selector);
         this.articlesService = articlesService;
+        pubSub.subscribe('reload', () => {
+             this.toggleForm();
+        });
     }
 
     //Load comments form in the detail article page
+    toggleForm(){
+        document.querySelector('.modal').classList.toggle("hidden");
+    }
     loadCommentsForm(){
         document.querySelector('.fa-plus').addEventListener("click", event => {
-            document.querySelector('.modal').classList.toggle("hidden");
+            this.toggleForm();
             document.querySelector('.fa-plus').classList.toggle("fa-times");
           });
     }
+
   
     //Render a list of articles
     renderArticles(articles){
@@ -38,7 +45,7 @@ export class ArticlesController {
                                 <div class="text hide-elements">${article.text}</div>
                             </div>
                             <p class="published-date">${article.added}</p>
-                            <a href="" class="hide-elements comments">Comentarios</a>
+                            <a href="/detail?id=${article.id}#comments-list" class="hide-elements comments">Comentarios</a>
                         </div>
                 </div>`;
         }
