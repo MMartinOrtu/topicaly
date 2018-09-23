@@ -1,0 +1,12 @@
+@mixin resize-image($size){
+    
+    grid-template-columns: $size auto;
+    padding: 0 $gutter-padding;
+    .cover{
+        width: $size;
+        height: $size;
+        .article-cover{
+            min-width: 2 * $size;
+        }
+    }
+}
