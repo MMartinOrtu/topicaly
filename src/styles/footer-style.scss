@@ -1,17 +1,18 @@
 .web-footer {
   display: flex;
+  padding:$gutter-padding;
   width:100vw;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   bottom: 0;
-  font-size: $font-size-base;
-  background: $gainsboro;
-  p {
-    padding: 0 10px;
+  font-size: $font-size-small;
+  background: $background-color;
+
+  .footer-element{
+    color: $title-color;
   }
-  a{
-    position: absolute;
-    right: 10%;
-    ;
+
+  @include for-tablet-portrait{
+    font-size: $font-size-medium;
   }
 }

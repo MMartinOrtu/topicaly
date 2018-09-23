@@ -6,19 +6,16 @@
     justify-content: center;
     justify-items: center;
     padding: $gutter-padding;
-    /* max-width: 500px; */
 
     .title{
         font-size: $font-size-large;
         text-align: center;
         margin: 5px 0;
     }
-
     .article-cover {
         border-radius: 5%;
         overflow: hidden;
     }
-
     .author-wrapper{
         display: grid;
         justify-self:stretch;
@@ -39,20 +36,24 @@
         }
         .fa-heart{
             justify-self: end;
-            color: rgb(75, 11, 11),
+            color: $title-color;
         }
     }
     .text{
         text-align: justify;
-        font-size: $font-size-medium;
+        font-size: $font-size-base;
     }
     @include for-tablet-portrait{
         width: 80%;
-        margin: 50px auto;
+        margin: 90px auto;
         grid-gap: 20px;
+        .text{
+            font-size: $font-size-medium;
+        }
     }
+
     @include  for-desktop{
-        width: 60%;
+        width: 70%;
         .author-wrapper .author{
             font-size: $font-size-medium;
         }

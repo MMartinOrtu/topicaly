@@ -55,30 +55,16 @@ export class FormController {
     checkInputValidity() {
         // en todos los input que hay en el formulario, los valido cuando se pierde el foco
         this.element.querySelectorAll('.input').forEach(input => {
-
-            input.addEventListener('change', event => {
+                console.log(input);
+            input.addEventListener('blur', event => {
                 // event.target sería lo mismo que input en este caso
                 if (input.checkValidity() == false) {
                     input.classList.add('error');
                 } else {
                     input.classList.remove('error');
                 }
-                this.checkFormValidity();
+                this.element.querySelector('button').style.display = "block";
             });
-
         });
     }
-
-    checkFormValidity() {
-        let button = this.element.querySelector('button');
-        if (this.element.checkValidity()) {
-            button.disabled = false;
-        } else {
-            button.disabled = true;
-        }
-    }
-
-
-
-
 }

@@ -17,7 +17,7 @@ const query = queryString.parse(window.location.search);
 const articleId = query && query.id;
 
 let headerController = new HeaderController(".web-header");
-let articlesController = new ArticlesController('.article-detail', articlesService, PubSub);
+let articlesController = new ArticlesController('.article-detail', articlesService, commentsService, PubSub);
 let commentsController = new CommentsController('.comments-list', articleId, commentsService, PubSub)
 
 

@@ -1,34 +1,31 @@
+@import "mixins/hover-color";
+
 *, *::after, *::before, *:after, *:before{
   box-sizing: border-box;
 }
-
 body{
   font-family: $text-font-family;
-  background: $baby-powder;
+  background: $gainsboro;
   padding-top: $header-height;
+  color: $text-color;
 }
-
 a{
   font-size: $font-size-medium;
   text-decoration: none;
-  color: black;
-    a:hover {
-      color: rgb(47, 207, 47);
-    }
+  color: $links-color;
+  @include hover-color;
 }
-
 img{
   max-width: 100%;
 }
-
 .ux-message{
   margin: 100px auto;
   text-align: center;
   width: 60vw;
   font-size:$font-size-extra-large;
   padding: $gutter-padding;
-  background: rgb(102, 44, 44);
+  background: $error-color;
   border-radius: 10px;
-  color: white;
+  color: $error-text-color;
 }
 

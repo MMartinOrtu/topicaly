@@ -1,37 +1,44 @@
 import { ArticlesService } from 'services/articles-service.js';
 import placeholder from 'assets/user-solid.svg';
 import ux from 'components/ux-controller.js';
+import { resolve } from 'path';
 
 export class ArticlesController {
-    constructor (selector, articlesService, pubSub){
+    constructor (selector, articlesService, commentsService, pubSub){
         this.element= document.querySelector(selector);
         this.articlesService = articlesService;
+        this.commentsService = commentsService;
         pubSub.subscribe('reload', () => {
-             this.toggleForm();
+        this.toggleForm();
         });
     }
 
     //Load comments form in the detail article page
     toggleForm(){
         document.querySelector('.modal').classList.toggle("hidden");
+        document.querySelector('.fa-plus').classList.toggle("fa-times");
     }
     loadCommentsForm(){
         document.querySelector('.fa-plus').addEventListener("click", event => {
             this.toggleForm();
-            document.querySelector('.fa-plus').classList.toggle("fa-times");
-          });
+        });
     }
 
-  
     //Render a list of articles
-    renderArticles(articles){
+    async renderArticles(articles){
         let html = '';
         for (let article of articles) {
-            let cover= `<img class="article-cover" src="${article.cover.url}" alt="Article image">`;
-            if (article.cover.type === "video"){
-                cover = `<iframe class="article-cover" src="${article.cover.url}" frameborder="0" allowfullscreen></iframe>`;
-            }
-        html += `<div class="articles">
+            try{
+                //Get the number of comments os each article
+                let comments =  await this.commentsService.getComments(article.id);
+                let numberOfComments = comments.length;
+
+                //Render article
+                let cover= `<img class="article-cover" src="${article.cover.url}" alt="Article image">`;
+                if (article.cover.type === "video"){
+                    cover = `<iframe class="article-cover" src="${article.cover.url}" frameborder="0" allowfullscreen></iframe>`;
+                }
+                html += `<div class="articles">
                     <a href="/detail/?id=${article.id}">
                         <div class="cover">${cover}</div>
                     </a>
@@ -44,10 +51,17 @@ export class ArticlesController {
                             <div class="text-wrapper">
                                 <div class="text hide-elements">${article.text}</div>
                             </div>
-                            <p class="published-date">${article.added}</p>
-                            <a href="/detail?id=${article.id}#comments-list" class="hide-elements comments">Comentarios</a>
+                            <div class="bottom-info-wrapper">
+                                <p class="published-date">${article.added}</p>
+                                <a href="/detail?id=${article.id}#comments-list" class="hide-elements comments">Comments</a>
+                                <div class="hide-elements number-of-comments">${numberOfComments}</div>
+                            </div>
                         </div>
                 </div>`;
+            }catch(error){
+                console.error("ERROR RETRIEVING DATA", error);
+                ux.showErrorMessage(document.body);
+            }
         }
         this.element.innerHTML = html;
     }
@@ -62,7 +76,7 @@ export class ArticlesController {
                 this.renderArticles(articles);
             }
         }).catch((error) =>{
-            console.error("ERROR RETRIEVING SONGS", error);
+            console.error("ERROR RETRIEVING DATA", error);
             ux.showErrorMessage(this.element);
         });
     }
@@ -104,14 +118,13 @@ export class ArticlesController {
     loadArticle (id) {
         ux.showLoadingMessage(this.element);
         this.articlesService.getArticle(id).then( article =>{
-            console.log(article);
             if (!article.id) {
                 ux.showNoDataMessage(this.element);
             } else {
                 this.renderArticle(article);
             };
         }).catch((error) =>{
-            console.error("ERROR RETRIEVING SONGS", error);
+            console.error("ERROR RETRIEVING DATA", error);
         });
     }
 
@@ -120,7 +133,6 @@ export class ArticlesController {
         return localStorage.getItem(`like-article-${id}`);
     };
     toggleLike(id){
-        console.log(this.isLiked(id));
         let likeValue = this.isLiked(id) == 'true' ? 'false' : 'true';
         localStorage.setItem(`like-article-${id}`, likeValue);
     };

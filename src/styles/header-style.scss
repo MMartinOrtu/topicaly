@@ -5,17 +5,18 @@
   z-index: 99999;
   top: 0;
   padding:$gutter-padding;
-  background:$baby-powder;
+  background:$background-color;
+
 
   .web-title{
-    font-size: $font-size-h1;
+    font-size: $font-size-large;
     font-family: $title-font-family;
     width: 100%;
     min-width: 260px;
     padding-left: $gutter-padding;
     text-align: left;
     margin: 0 auto;
-    color: $dark-green;
+    color: $title-color;
   }
 
   .fa-bars{
@@ -42,29 +43,31 @@
     }
     .web-title {
       text-align: center;
+      font-size: $font-size-XXL;
     }
     .header-components{
       display:flex;
     }
     &>a{
       position: absolute;
-      top: 20px;
-      right: 180px;
-      color:$dark-green;
+      top: 30px;
+      right: 160px;
     }
     #search-input {
       position: absolute;
       color:$grey;
-      top: 18px;
+      top: 30px;
       font-size:$font-size-medium;
-      right: 30px;
-      width: 140px;
+      right: 25px;
+      width: 120px;
       cursor: pointer;
-      border: 0px solid;
-      background:$gainsboro;
+      border: 0 solid;
+      background: $background-color;
+
     }
     ul {
       margin:0 auto;
+      padding: 0;
       padding-top: $gutter-padding;
     }
     .categories-list li{
@@ -75,37 +78,38 @@
   }
 
   &.show-menu{
-
     @keyframes fadeIn {
       from { opacity: 0; }
         to { opacity: 1; }
     }
-
     .header-components {
       animation: fadeIn 1s;
       display: flex;
       flex-direction: column;
-
       ul{
         margin: 0;
         padding:0;
-
         li{
           list-style-type: none;
-          padding: 8px;
+          padding: $gutter-padding;
           text-align: center;
           @include hover-color;
         }
       }
     }
-
     #sign-in-link{
       text-align: center;
       margin-top:5px;
       color:$dark-green;
     }
     #search-input{
-      margin: 10px auto;
+      margin: 15px auto;
+      cursor: pointer;
+      border: 0 solid;
+      font-size: $font-size-medium;
+      background: $background-color;
+      text-align: center;
+      color: $dark-onyx;
     }
   }
 }

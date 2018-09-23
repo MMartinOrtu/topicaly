@@ -1,15 +1,13 @@
 .comments-list-title{
     text-align: center;
     margin:0;
-    color:$dark-green;
+    color:$title-color;
     font-size: $font-size-large;
-
     .fas{
         position: absolute;
         right: 10%;
     }
 }
-
 .comments-list{
     display: grid;
     grid-gap: 2px;
@@ -18,26 +16,33 @@
     padding: $gutter-padding;
 
     .comments{
-        padding: 0 $gutter-padding;
+        padding: $gutter-padding;
         width: 80%;
-        background: $gainsboro;
+        background: $comments-background;
         border-radius:15px;
 
         .fullname{
             font-size: $font-size-medium;
-            color: rgb(75, 11, 11);
+            color: $title-color;
         }
         .email{
             font-size: $font-size-small;
         }
-
         .comment-text{
             margin: 10px 0;
         }
 
-
-
-
+        @include for-tablet-landscape{
+            .fullname{
+                font-size: $font-size-large;
+            }
+            .email{
+                font-size: $font-size-base;
+            }
+            .comment-text{
+                font-size: $font-size-medium;
+            }
+        }
     }
 
 

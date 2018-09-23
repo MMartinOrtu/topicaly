@@ -9,8 +9,7 @@ export class CommentsController{
             this.articleId = articleId;
             this.commentsService = commentsService;
             this.commentsLoaded = false;
-            PubSub.subscribe('reload', () => {
-                this.commentsloaded = false;
+            pubSub.subscribe('reload', () =>{
                 this.loadComments();
             });
         }
@@ -21,10 +20,9 @@ export class CommentsController{
         }
 
         renderComments(comments){
-            console.log(comments);
             let html = '';
             for (let comment of comments) {
-                console.log("Holaaaa")
+                console.info("Loading comments...")
             html += `<div class="comments">
                         <div class="fullname">${comment.fullname}</div>
                         <div class="email">${comment.email}</div>
@@ -36,21 +34,18 @@ export class CommentsController{
         }
 
         loadComments(){
-            if(this.commentsLoaded === false){
                 ux.showLoadingMessage(this.element);
                 this.commentsService.getComments(this.articleId).then( comments =>{
                     if (comments.length == 0) {
-                        console.log(comments);
                         ux.showNoDataMessage(this.element);
                     } else {
                         this.renderComments(comments);
                     }
                 }).catch((error) =>{
                     console.log('ERRORRRRRR', error)
-                    console.error("ERROR RETRIEVING SONGS", error);
+                    console.error("ERROR RETRIEVING DATA", error);
                     ux.showErrorMessage(this.element);
                 });
-            }
         }
 
         spotCommentList(){
@@ -68,8 +63,4 @@ export class CommentsController{
                 }
             }
         }
-
-
-
-
 }
