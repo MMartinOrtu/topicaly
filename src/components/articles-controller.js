@@ -1,7 +1,9 @@
-import { ArticlesService } from 'services/articles-service.js';
 import placeholder from 'assets/user-solid.svg';
 import ux from 'components/ux-controller.js';
-import { resolve } from 'path';
+import birds1x from 'assets/birds-s.png';
+import birds2x from 'assets/birds-m.png';
+import birds3x from 'assets/birds-l.png';
+
 
 export class ArticlesController {
     constructor (selector, articlesService, commentsService, pubSub){
@@ -92,16 +94,19 @@ export class ArticlesController {
                     <div class="author-wrapper">
                         <img  class="profile-picture" src="${placeholder}" srcset="${article.picture}" width="100px">
                         <div class="author">${article.author}<p class="published-date">${article.added}</p></div>
-
-                            <i class="far fa-heart fa-2x"></i>
-
-                        </div>
-                    <div class="text">${article.text}</div>  
-                    <div class="text">${article.text}</div>  
-                    <div class="text">${article.text}</div>  
+                        <i class="far fa-heart fa-2x"></i>
+                    </div>
+                    <div class="text">${article.text}</div>
+                    <div class="text">${article.text}</div>
+                    <div class="text">${article.text}</div>
+                    <figure>
+                        <img src="/${birds3x}" srcset="/${birds1x} 200w, /${birds2x} 500w, /${birds3x} 1000w" alt="Image of birds" class="img-responsive">
+                        <figcaption class="photo-author">Photo by Glen Carrie on Unsplash</figcaption>
+                    </figure>
                     <div>
                         <a title="back" class="back" href='javascript:history.back()'><- Back</a>
-                    </div>`
+                    </div>
+                    `
                     ;
         this.element.innerHTML = html;
 
@@ -139,4 +144,6 @@ export class ArticlesController {
     setInitialLikeValue (likeIcon, liked) {
         if (liked === 'true') likeIcon.classList.add('fas');
     };
+
+
 }

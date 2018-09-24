@@ -43,6 +43,10 @@
         text-align: justify;
         font-size: $font-size-base;
     }
+    .photo-author{
+        text-align: end;
+        font-size: $font-size-small;
+    }
     @include for-tablet-portrait{
         width: 80%;
         margin: 90px auto;

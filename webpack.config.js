@@ -57,9 +57,16 @@ var commonConfig = {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          {
+/*           {
             loader: 'file-loader?name=[name].[ext]&useRelativePath=true',
+          } */
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/[path][name].[hash].[ext]'
+            }
           },
+
           {
             loader: 'image-webpack-loader'
           },
