@@ -48,7 +48,8 @@ export class FormController {
             fullname: this.element.querySelector('#fullname').value,
             email: this.element.querySelector('#email').value,
             comment: this.element.querySelector('#comment').value,
-            articleId: this.articleId
+            articleId: this.articleId,
+            added: new Date().getTime()
         }
     }
 

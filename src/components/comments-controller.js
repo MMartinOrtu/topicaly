@@ -21,12 +21,30 @@ export class CommentsController{
 
         renderComments(comments){
             let html = '';
+            let publishedFrom ='';
             for (let comment of comments) {
                 console.info("Loading comments...")
-            html += `<div class="comments">
+                //Managing dat of comment post to display date
+                let commentPublishingDate = comment.added;
+                let now = new Date().getTime();
+                let dateDifference = now - commentPublishingDate;
+
+                    if (dateDifference > 86400000){
+                        commentPublishingDate = new Date().toLocaleDateString();
+                        publishedFrom = `added ${commentPublishingDate}`
+                    }else if ((dateDifference > 3600000)){
+                        commentPublishingDate = new Date().getHours();
+                        publishedFrom = `added ${commentPublishingDate} hours ago`;
+                    }else{
+                        commentPublishingDate = new Date().getUTCMinutes();
+                        publishedFrom = `added ${commentPublishingDate} minutes ago`;
+                    }
+
+                    html += `<div class="comments">
                         <div class="fullname">${comment.fullname}</div>
                         <div class="email">${comment.email}</div>
                         <div class="comment-text">${comment.comment}</div>
+                        <div class="added">${publishedFrom}</div>
                     </div>`;
             }
             this.element.innerHTML = html;
@@ -62,5 +80,8 @@ export class CommentsController{
                   this.loadComments();
                 }
             }
+        }
+        publishTime (){
+            
         }
 }

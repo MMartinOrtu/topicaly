@@ -27,11 +27,14 @@
         }
         .email{
             font-size: $font-size-small;
+            
         }
         .comment-text{
-            margin: 10px 0;
+            margin: 20px 0;
         }
-
+        .added{
+            text-align: right;
+        }
         @include for-tablet-landscape{
             .fullname{
                 font-size: $font-size-large;
@@ -42,9 +45,9 @@
             .comment-text{
                 font-size: $font-size-medium;
             }
+            .added{
+                font-size: $font-size-medium;
+            }
         }
     }
-
-
-
 }
