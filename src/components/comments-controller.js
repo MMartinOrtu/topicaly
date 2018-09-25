@@ -24,7 +24,7 @@ export class CommentsController{
             let publishedFrom ='';
             for (let comment of comments) {
                 console.info("Loading comments...")
-                //Managing dat of comment post to display date
+                //Managing time of comment post to display date
                 let commentPublishingDate = comment.added;
                 let now = new Date().getTime();
                 let dateDifference = now - commentPublishingDate;
