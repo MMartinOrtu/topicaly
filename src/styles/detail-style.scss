@@ -2,7 +2,7 @@
 
 .article-detail {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 20px;
     justify-content: center;
     justify-items: center;
     padding: $gutter-padding;
@@ -41,19 +41,15 @@
     }
     .text{
         text-align: justify;
-        font-size: $font-size-base;
+        font-size: $font-size-medium;
     }
     .photo-author{
         text-align: end;
         font-size: $font-size-small;
     }
-    @include for-tablet-portrait{
+    @include for-tablet-landscape{
         width: 80%;
         margin: 90px auto;
-        grid-gap: 20px;
-        .text{
-            font-size: $font-size-medium;
-        }
     }
 
     @include  for-desktop{
