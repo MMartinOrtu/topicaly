@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --mode=production",
     "start": "webpack-dev-server --mode=development --hot --inline",
+    "deploy": "webpack --mode=production && cp CNAME dist/CNAME && surge dist",
     "server": "json-server --watch db.json --port=8000"
   },
   "repository": {

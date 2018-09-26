@@ -1,4 +1,4 @@
-# TOPICALY
+<p align=center><img src="data/Foto-readme-logo.png"></p>
 
 
 Topicaly is a social plattform for articles.
@@ -45,6 +45,15 @@ To set the application for production using Webpack:
 npm run build
 ```
 
+## Views
+### Main
+<p align=center><img src="data/Foto-readme.jpg"></p>
+
+### Detail page
+<p align=center><img src="data/Foto-readme-detail.jpg"></p>
+
+### Form
+<p align=center><img src="data/Foto-readme-form.jpg"></p>
 
 
 
