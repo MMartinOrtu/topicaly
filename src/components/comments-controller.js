@@ -1,6 +1,7 @@
 import { CommentsService } from 'services/comments-service.js';
 import debounce  from 'utils/utils.js';
 import ux from 'components/ux-controller.js';
+import { notEqual } from 'assert';
 
 export class CommentsController{
 
@@ -25,19 +26,16 @@ export class CommentsController{
             for (let comment of comments) {
                 console.info("Loading comments...")
                 //Managing time of comment post to display date
-                let commentPublishingDate = comment.added;
-                let now = new Date().getTime();
-                let dateDifference = now - commentPublishingDate;
+                let commentPublishingDate =new Date (comment.added);
+                let now = new Date();
+                let dateDifference = now.getTime() - comment.added;
 
                     if (dateDifference > 86400000){
-                        commentPublishingDate = new Date().toLocaleDateString();
-                        publishedFrom = `added ${commentPublishingDate}`
+                        publishedFrom = `added ${commentPublishingDate.toLocaleDateString()}`
                     }else if ((dateDifference > 3600000)){
-                        commentPublishingDate = new Date().getHours();
-                        publishedFrom = `added ${commentPublishingDate} hours ago`;
-                    }else{
-                        commentPublishingDate = new Date().getUTCMinutes();
-                        publishedFrom = `added ${commentPublishingDate} minutes ago`;
+                        dateDifference = now.getHours() -commentPublishingDate.getHours();
+                        console.log('hours', dateDifference)
+                        publishedFrom = `added ${dateDifference} minutes ago`;
                     }
 
                     html += `<div class="comments">
