@@ -65,7 +65,16 @@ export class FormController {
                     input.classList.remove('error');
                 }
                 this.element.querySelector('button').style.display = "block";
+                this.checkFormValidity();
             });
         });
+    }
+    checkFormValidity() {
+        let button = this.element.querySelector('button');
+        if (this.element.checkValidity()) {
+            button.disabled = false;
+        } else {
+            button.disabled = true;
+        }
     }
 }

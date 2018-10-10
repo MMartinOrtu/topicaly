@@ -14,7 +14,7 @@ export class CommentsController{
                 this.loadComments();
             });
         }
-        //Define event listener when the comments container apperar when scrolling
+        //Define event listener when the comments container appear when scrolling
         callCommentsListener(){
             //debounce function prevent for triggering scroll events many times
             window.addEventListener('scroll', debounce(this.spotCommentList.bind(this)));
@@ -78,8 +78,5 @@ export class CommentsController{
                   this.loadComments();
                 }
             }
-        }
-        publishTime (){
-            
         }
 }
